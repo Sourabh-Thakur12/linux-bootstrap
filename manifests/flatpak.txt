@@ -1,0 +1,11 @@
+Zen	app.zen_browser.zen	1.20.1b	stable	system
+Flatseal	com.github.tchx84.Flatseal	2.4.0	stable	system
+Spotify	com.spotify.Client	1.2.84.475.ga1a748ff	stable	system
+Bottles	com.usebottles.bottles	63.2	stable	system
+Obsidian	md.obsidian.Obsidian	1.12.7	stable	system
+Lutris	net.lutris.Lutris	0.5.22	stable	system
+Audacity	org.audacityteam.Audacity	3.7.7	stable	system
+GNU Image Manipulation Program	org.gimp.GIMP	3.2.4	stable	system
+Inkscape	org.inkscape.Inkscape	1.4.4	stable	system
+Kdenlive	org.kde.kdenlive	26.04.1	stable	system
+Sober	org.vinegarhq.Sober	1.6.8	stable	system

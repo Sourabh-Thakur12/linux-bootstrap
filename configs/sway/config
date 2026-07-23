@@ -1,0 +1,283 @@
+# Default config for sway# =========================================
+# SWAY CONFIG
+# Converted + optimized from your i3 config
+# NVIDIA + Productivity + Minimal Effects
+# =========================================
+exec notify-send "SWAY CONFIG RELOADED"
+
+### VARIABLES ################################
+
+set $mod Mod4
+set $term wezterm
+set $menu rofi -show drun
+### CONFIG ####################################
+exec_always source ~/.config/sway/env
+
+### TOUCHPAD #################################
+input type:touchpad {
+    tap enabled
+    tap_button_map lrm
+    natural_scroll enabled
+    dwt enabled
+    middle_emulation enabled
+}
+### NVIDIA FIXES #############################
+
+# Helps NVIDIA on Wayland
+exec_always {
+    export WLR_NO_HARDWARE_CURSORS=1
+}
+
+### AUTOSTART ################################
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+exec systemctl --user restart xdg-desktop-portal
+exec systemctl --user restart xdg-desktop-portal-wlr
+
+# notifications
+# exec dunst
+exec_always  pkil mako
+exec_always ~/.local/bin/swaync
+
+# wallpaper
+exec swaybg -i ~/Customize/wallpapers/a_woman_with_long_hair_wearing_sunglasses.png -m fill
+
+# xdg autostart
+exec dex --autostart --environment sway
+
+# network manager
+exec nm-applet
+
+# bluetooth manager
+exec blueman-applet
+
+# clipboard manager (optional)
+# exec wl-paste --watch cliphist store
+
+### INPUT ####################################
+
+input * {
+    xkb_layout us
+    repeat_delay 250
+    repeat_rate 40
+}
+
+### GAPS #####################################
+
+gaps inner 2
+# gaps outer 2
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+default_border pixel 2
+
+### APPEARANCE ###############################
+
+# opacity (supported in swayfx only)
+# default_dim_inactive 0.05
+
+### AUDIO ####################################
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ &&  ~/Customize/Scripts/volume.sh
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ~/Customize/Scripts/volume.sh
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ~/Customize/Scripts/volume.sh
+### MEDIA ####################################
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+### BRIGHTNESS ###############################
+# ==========================================================
+# BRIGHTNESS KEYS ARE NOT HANDLED BY SWAY ON THIS DELL G15
+#
+# Dell WMI hotkeys generate ACPI events instead of normal
+# Wayland key events. Brightness control is handled by:
+#
+#   /etc/acpi/events/brightness
+#   /etc/acpi/brightness.sh
+#
+# If brightness keys stop working:
+#   1. Check acpid.service
+#   2. Check /etc/acpi/brightness.sh
+#   3. Check /etc/acpi/events/brightness
+#
+# We spent ~5 hours debugging this because brightness keys
+# never reached Sway/wev despite appearing in evtest.
+#
+# DO NOT MOVE BRIGHTNESS HANDLING TO SWAY UNLESS VERIFIED.
+# ==========================================================
+
+### TERMINAL #################################
+
+bindsym $mod+Return exec $term
+
+### APP LAUNCHER #############################
+
+bindsym $mod+d exec $menu
+
+### POWER MENU ###############################
+
+bindsym $mod+Shift+p exec ~/Customize/Scripts/powerOpions.sh
+
+### MONITOR SCRIPT ###########################
+
+bindsym $mod+m exec ~/Customize/Scripts/mirror.sh
+
+### KILL WINDOW ##############################
+
+bindsym $mod+Shift+q kill
+
+### FOCUS ####################################
+
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# Arrow keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+### MOVE WINDOWS #############################
+
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+### SPLITS ###################################
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+### FULLSCREEN ###############################
+
+bindsym $mod+f fullscreen
+
+### LAYOUTS ##################################
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+### FLOATING #################################
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+### PARENT ###################################
+
+bindsym $mod+a focus parent
+
+### WORKSPACES ###############################
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+### SCREENSHOT ###############################
+
+bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/screenshot.png
+
+### CLIPBOARD SCREENSHOT #####################
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+
+### RELOAD ###################################
+
+bindsym $mod+Shift+c reload
+
+### RESTART ##################################
+
+bindsym $mod+Shift+r restart
+
+### EXIT #####################################
+
+bindsym $mod+Shift+e exit
+
+### RESIZE MODE ##############################
+
+mode "resize" {
+
+    bindsym j resize shrink width 10px
+    bindsym k resize grow height 10px
+    bindsym l resize shrink height 10px
+    bindsym semicolon resize grow width 10px
+
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+### WINDOW RULES #############################
+
+# Float dialogs
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="dialog"] floating enable
+
+# Blender better handling
+for_window [app_id="blender"] floating disable
+
+### IDLE #####################################
+
+exec swayidle -w  wait-for-inhibit \
+ timeout 600 'swaylock -f -c 000000' \
+ timeout 900 'swaymsg "output * dpms off"' \
+ resume 'swaymsg "output * dpms on"'
+
+### BAR ######################################
+
+bar {
+    swaybar_command waybar
+}
+
+### XWAYLAND #################################
+
+xwayland enable
+
+### ENV ######################################
+
+include /etc/sway/config.d/*
+bindsym $mod+F12 exec notify-send "SWAY TEST"

@@ -1,0 +1,23 @@
+*{
+font: "JetBrainsMono Nerd Font 12";
+}
+
+configuration{
+modi:"drun,run";
+show-icons: true;
+}
+
+window{
+width: 500px;
+border-radius: 12px;
+}
+
+listview{
+lines : 5;
+sapcing: 5;
+dyanamic: true;
+}
+
+element{
+padding: 8px;
+}

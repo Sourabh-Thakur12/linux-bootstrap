@@ -1,0 +1,35 @@
+[[manager.prepend_keymap]]
+on = "<Enter>"
+run = "open"
+desc = "Open file (smart)"
+
+[[manager.prepend_keymap]]
+on = "o"
+run = "open --interactive"
+desc = "Open with options"
+
+[[manager.prepend_keymap]]
+on = "O"
+run = "open split"
+desc = "Open in nvim split"
+
+[[manager.prepend_keymap]]
+on = "y"
+run = "yank"
+desc = "Yank file"
+
+[[manager.prepend_keymap]]
+on = "Y"
+run = "yank --absolute"
+desc = "Yank full path"
+
+
+[[manager.prepend_keymap]]
+on = "z"
+run =  "noop"
+desc = "terminal freeze fix"
+
+[[manager.prepend_keymap]]
+on = "Z"
+run =  "noop"
+desc = "jump with zoxide"

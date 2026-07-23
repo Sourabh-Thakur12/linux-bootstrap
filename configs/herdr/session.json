@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "w7",
+      "custom_name": null,
+      "identity_cwd": "/home/sourabh/Coding/Android/studentXchange/FrontEnd",
+      "public_pane_numbers": {
+        "1": 2,
+        "3": 3,
+        "2": 4
+      },
+      "next_public_pane_number": 5,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Split": {
+                  "direction": "Vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "Pane": 1
+                  },
+                  "second": {
+                    "Pane": 2
+                  }
+                }
+              },
+              "second": {
+                "Pane": 3
+              }
+            }
+          },
+          "panes": {
+            "3": {
+              "cwd": "/home/sourabh/Coding/Android/studentXchange/FrontEnd"
+            },
+            "2": {
+              "cwd": "/home/sourabh/Coding/Android/studentXchange/BackEnd"
+            },
+            "1": {
+              "cwd": "/home/sourabh/Coding/Android/studentXchange/FrontEnd"
+            }
+          },
+          "zoomed": false,
+          "focused": 3,
+          "root_pane": 1
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 0,
+  "selected": 0,
+  "sidebar_width": 26,
+  "sidebar_section_split": 0.5,
+  "collapsed_space_keys": []
+}

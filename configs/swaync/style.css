@@ -1,0 +1,14 @@
+/* ── style.css ──────────────────────────────────────────────
+   SwayNC — main stylesheet
+   Imports modular theme files
+   ──────────────────────────────────────────────────────────── */
+
+@import "style/colors.css";
+@import "style/notifications.css";
+@import "style/control_center.css";
+
+/* ── Global reset ── */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+}

@@ -1,0 +1,133 @@
+/* ── notifications.css ──────────────────────────────────────
+   Popup notification bubbles
+   ──────────────────────────────────────────────────────────── */
+
+.notification-row {
+  outline: none;
+  margin: 4px 0;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: transparent;
+}
+
+/* ── Outer wrapper ── */
+.notification {
+  border-radius: 14px;
+  border: 1px solid alpha(@outline_variant, 0.4);
+  background-color: @surface_container;
+  box-shadow: 0 4px 24px alpha(@shadow, 0.5);
+  padding: 0;
+  margin: 6px;
+}
+
+/* ── Content layout ── */
+.notification-content {
+  background: transparent;
+  padding: 14px 16px;
+  border-radius: 14px;
+}
+
+/* ── App icon ── */
+.notification-default-icon,
+.notification-icon {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 10px;
+}
+
+.notification-default-icon {
+  background-color: @primary_container;
+  color: @on_primary_container;
+  font-size: 22px;
+}
+
+/* ── Text ── */
+.notification-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: @on_surface;
+  margin-bottom: 2px;
+}
+
+.notification-body {
+  font-size: 12px;
+  color: @on_surface_variant;
+}
+
+/* ── Timestamp ── */
+.time-label {
+  font-size: 10px;
+  color: @outline;
+}
+
+/* ── App name label ── */
+.app-name {
+  font-size: 11px;
+  color: @primary;
+  font-weight: 500;
+}
+
+/* ── Action buttons ── */
+.notification-action {
+  background-color: @surface_container_high;
+  color: @on_surface;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  margin: 4px;
+  transition: background-color 120ms ease;
+}
+
+.notification-action:hover {
+  background-color: @primary_container;
+  color: @on_primary_container;
+}
+
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* ── Close button ── */
+.close-button {
+  background-color: transparent;
+  color: @outline;
+  border: none;
+  border-radius: 50%;
+  min-width: 22px;
+  min-height: 22px;
+  font-size: 13px;
+  padding: 0;
+  transition: all 150ms ease;
+}
+
+.close-button:hover {
+  background-color: @error_container;
+  color: @on_error_container;
+}
+
+/* ── Urgency tinting ── */
+.notification.low {
+  border-color: alpha(@outline_variant, 0.25);
+}
+
+.notification.normal {
+  border-color: alpha(@outline_variant, 0.4);
+}
+
+.notification.critical {
+  border-color: alpha(@error, 0.6);
+  background-color: mix(@surface_container, @error_container, 0.85);
+}
+
+/* ── Image in body ── */
+.notification-body-image {
+  border-radius: 8px;
+  margin-top: 8px;
+}

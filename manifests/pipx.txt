@@ -1,0 +1,8 @@
+venvs are in /home/sourabh/.local/share/pipx/venvs
+apps are exposed on your $PATH at /home/sourabh/.local/bin
+manual pages are exposed at /home/sourabh/.local/share/man
+   package holehe 1.61, installed using Python 3.12.3
+    - holehe
+   package maigret 0.5.0, installed using Python 3.12.3
+    - maigret
+    - update_sitesmd

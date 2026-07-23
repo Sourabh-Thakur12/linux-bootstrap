@@ -1,0 +1,15 @@
+[Unit]
+Description=Nexus Personal AI OS
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/sourabh/Systems/Nexus
+ExecStart=/home/sourabh/Systems/Nexus/.venv/bin/python main.py
+Restart=on-failure
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target

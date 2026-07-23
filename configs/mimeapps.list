@@ -1,0 +1,28 @@
+[Default Applications]
+application/vnd.debian.binary-package=snap-store_snap-store.desktop
+text/html=bruno.desktop
+x-scheme-handler/mailto=thunderbird_thunderbird.desktop
+x-scheme-handler/mid=thunderbird_thunderbird.desktop
+video/x-matroska=vlc.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
+x-scheme-handler/http=firefox_firefox.desktop
+x-scheme-handler/https=firefox_firefox.desktop
+x-scheme-handler/about=firefox_firefox.desktop
+x-scheme-handler/unknown=firefox_firefox.desktop
+x-scheme-handler/pttp=CiscoPacketTracerPtsa-9.0.0.desktop
+application/x-pka=CiscoPacketTracer-9.0.0.desktop
+application/x-pkt=CiscoPacketTracer-9.0.0.desktop
+application/x-pkz=CiscoPacketTracer-9.0.0.desktop
+application/x-pksz=CiscoPacketTracer-9.0.0.desktop
+application/pdf=org.gnome.Evince.desktop
+video/mp4=vlc.desktop
+x-scheme-handler/bruno=bruno.desktop
+image/jpeg=org.gnome.eog.desktop
+x-scheme-handler/discord=vesktop.desktop
+
+[Added Associations]
+application/vnd.debian.binary-package=snap-store_snap-store.desktop;
+video/x-matroska=vlc.desktop;
+application/pdf=org.gnome.Evince.desktop;
+video/mp4=vlc.desktop;
+image/jpeg=org.gnome.eog.desktop;

@@ -1,0 +1,163 @@
+/* ── control_center.css ─────────────────────────────────────
+   Notification center panel
+   ──────────────────────────────────────────────────────────── */
+
+.control-center {
+  background-color: alpha(@surface_container_low, 0.92);
+  border: 1px solid alpha(@outline_variant, 0.35);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 8px 32px alpha(@shadow, 0.6);
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  color: @outline;
+  font-size: 13px;
+}
+
+/* ── Scrollbar ── */
+scrollbar slider {
+  background-color: alpha(@outline_variant, 0.5);
+  border-radius: 4px;
+  min-width: 4px;
+  min-height: 4px;
+}
+
+scrollbar slider:hover {
+  background-color: @outline;
+}
+
+/* ── Title widget ── */
+.widget-title {
+  margin: 4px 6px 8px 6px;
+}
+
+.widget-title > label {
+  font-size: 14px;
+  font-weight: 700;
+  color: @on_surface;
+}
+
+.widget-title > button {
+  background-color: @surface_container_high;
+  color: @on_surface_variant;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 12px;
+  font-size: 12px;
+  transition: all 150ms ease;
+}
+
+.widget-title > button:hover {
+  background-color: @primary_container;
+  color: @on_primary_container;
+}
+
+/* ── DND toggle ── */
+.widget-dnd {
+  margin: 4px 6px;
+}
+
+.widget-dnd > label {
+  font-size: 13px;
+  color: @on_surface_variant;
+}
+
+.widget-dnd > switch {
+  background-color: @surface_container_highest;
+  border: none;
+  border-radius: 20px;
+  min-width: 44px;
+  min-height: 24px;
+}
+
+.widget-dnd > switch:checked {
+  background-color: @primary;
+}
+
+.widget-dnd > switch slider {
+  background-color: @on_primary;
+  border-radius: 50%;
+  min-width: 18px;
+  min-height: 18px;
+  margin: 3px;
+}
+
+.widget-dnd > switch:checked slider {
+  background-color: @on_primary;
+}
+
+/* ── MPRIS widget ── */
+.widget-mpris {
+  background-color: alpha(@surface_container_high, 0.7);
+  border: 1px solid alpha(@outline_variant, 0.3);
+  border-radius: 14px;
+  padding: 12px;
+  margin: 6px;
+}
+
+.widget-mpris-player {
+  padding: 4px 0;
+}
+
+.widget-mpris-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: @on_surface;
+}
+
+.widget-mpris-subtitle {
+  font-size: 11px;
+  color: @on_surface_variant;
+}
+
+.widget-mpris > box > button {
+  background-color: transparent;
+  color: @on_surface_variant;
+  border: none;
+  border-radius: 50%;
+  min-width: 32px;
+  min-height: 32px;
+  font-size: 16px;
+  transition: all 150ms ease;
+}
+
+.widget-mpris > box > button:hover {
+  background-color: @surface_container_highest;
+  color: @primary;
+}
+
+/* ── Notifications inside panel ── */
+.control-center .notification {
+  background-color: @surface_container_high;
+  border-radius: 12px;
+  border: 1px solid alpha(@outline_variant, 0.25);
+  margin: 4px 6px;
+  box-shadow: none;
+}
+
+.control-center .notification:hover {
+  background-color: @surface_container_highest;
+}
+
+/* ── Notification group header ── */
+.notification-group-headers {
+  color: @outline;
+  font-size: 11px;
+  padding: 2px 8px;
+}
+
+.notification-group-icon {
+  color: @primary;
+}
+
+/* ── Separator ── */
+separator {
+  background-color: alpha(@outline_variant, 0.25);
+  min-height: 1px;
+  margin: 6px 10px;
+}
