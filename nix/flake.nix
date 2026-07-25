@@ -1,7 +1,7 @@
 {
 	description = "Sourabh's Linux Bootstrap";
 
-	input = {
+	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 	};
 
@@ -10,13 +10,15 @@
 	 system = "x86_64-linux";
 	    pkgs = import nixpkgs {
 					inherit system;
+					config.allowUnfree = true;
 					};
 	in
 	{
 	devShells.${system}.default = pkgs.mkShell {
-	packages = with pkgs; [
-	hello
-	];
+	packages = import ./packages/default.nix 
+	{
+	inherit pkgs;
+	}
 	};
 	};
 }
