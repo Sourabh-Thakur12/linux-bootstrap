@@ -1,5 +1,4 @@
 {pkgs}:
-
-with pkgs;[
-  hyprland
+[
+pkgs.hyprland
 ]
