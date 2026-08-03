@@ -3,9 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs:
+  outputs = { self, nixpkgs, zen-browser, ... } @ inputs:
     let
       system = "x86_64-linux";
 
@@ -13,14 +17,23 @@
         inherit system;
         config.allowUnfree = true;
       };
-    in {
-      packages.${system} =
-        import ./packages/default.nix {
-          inherit pkgs;
+
+      allPackages = import ./packages/default.nix {
+        inherit pkgs;
+        externalPkgs = {
+          zenBrowser = zen-browser.packages.${system}.default;
         };
+      };
+      
+    in {
+      packages.${system}.default = pkgs.buildEnv{
+        name = "sourabh-env";
+        paths = allPackages;
+      };
+      
 
       devShells.${system}.default = pkgs.mkShell {
-        packages = [ ];
+        packages = allPackages;
       };
     };
 }

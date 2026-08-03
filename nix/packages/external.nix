@@ -1,0 +1,5 @@
+{ externalPkgs }:
+
+with externalPkgs; [
+  zenBrowser
+]
