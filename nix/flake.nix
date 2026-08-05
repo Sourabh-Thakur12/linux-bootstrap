@@ -7,9 +7,13 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+  url = "github:hyprwm/Hyprland";
+  inputs.nixpkgs.follows = "nixpkgs";
+};
   };
 
-  outputs = { self, nixpkgs, zen-browser, ... } @ inputs:
+  outputs = { self, nixpkgs, zen-browser, hyprland, ... } @ inputs:
     let
       system = "x86_64-linux";
 
@@ -22,6 +26,7 @@
         inherit pkgs;
         externalPkgs = {
           zenBrowser = zen-browser.packages.${system}.default;
+          hyprland = hyprland.packages.${system}.default;
         };
       };
       

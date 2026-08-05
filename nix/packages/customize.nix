@@ -1,5 +1,7 @@
 {pkgs}:
 with pkgs;
 [
-pkgs.hyprland
+# pkgs.hyprland
+pkgs.rofi
+pkgs.waybar
 ]

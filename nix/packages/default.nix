@@ -8,6 +8,7 @@ let
   customize = import ./customize.nix {inherit pkgs; };
   cli = import ./cli.nix {inherit pkgs; };
   external = import ./external.nix { inherit externalPkgs; };
+  development = import ./development.nix {inherit pkgs;};
 in
 
-creative ++ customize ++ cli ++ external
+creative ++ customize ++ cli ++ external ++ development
