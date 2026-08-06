@@ -3,4 +3,5 @@ with pkgs;
 
 [
 pkgs.blender
+pkgs.inkscape
 ]

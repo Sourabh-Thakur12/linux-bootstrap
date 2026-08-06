@@ -7,4 +7,5 @@ pkgs.python3
 pkgs.uv
 
 pkgs.gcc
+pkgs.bruno
 ]
