@@ -11,4 +11,7 @@ pkgs.bat
 pkgs.herdr
 pkgs.ripgrep
 pkgs.yazi
+pkgs.fzf
+pkgs.networkmanager
+pkgs.brightnessctl
 ]

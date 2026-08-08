@@ -7,6 +7,7 @@ let
   external = import ./external.nix { inherit externalPkgs; };
   development = import ./development.nix {inherit pkgs;};
   software = import ./software.nix { inherit pkgs; };
+  zsh = import ./zsh.nix { inherit pkgs; };
 in
 
-creative ++ customize ++ cli ++ external ++ development ++ software
+creative ++ customize ++ cli ++ external ++ development ++ software ++ zsh
